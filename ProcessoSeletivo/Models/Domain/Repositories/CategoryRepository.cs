@@ -54,17 +54,18 @@ namespace ProcessoSeletivo.Models.Domain.Repositories
 
         public void Save(Category obj)
         {
-            try
+            using (ITransaction transaction = _session.BeginTransaction())
             {
-                 using (ITransaction transaction = _session.BeginTransaction())
-                {                    
+                try
+                {
                     _session.Save(obj);
                     transaction.Commit();
-                }   
-            }
-            catch (Exception ex)
-            {                
-                throw new Exception(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw new Exception(ex.Message);
+                }
             }
         }
     }
