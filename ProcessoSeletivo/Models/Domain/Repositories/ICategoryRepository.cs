@@ -5,12 +5,12 @@ namespace ProcessoSeletivo.Models.Domain.Repositories
 {
     public interface ICategoryRepository
     {
-        public Category FindById(int id);
+        Category FindById(int id);
 
-        public IList<Category> FindAll();
+        IList<Category> FindAll();
 
-        public IList<Category> FindAllSubcategories(int id);
+        IList<Category> FindAllSubcategories(int id);
 
-        public void Save(Category obj);
+        void Save(Category obj);
     }
 }

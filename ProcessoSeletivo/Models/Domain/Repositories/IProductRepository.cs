@@ -9,10 +9,10 @@ namespace ProcessoSeletivo.Models.Domain.Repositories
 {
     public interface IProductRepository
     {
-        public IList<Product> FindAll();
+        IList<Product> FindAll();
 
-        public IList<Product> FindAllByCategory(int id);
+        IList<Product> FindAllByCategory(int id);
 
-        public void Save(Product obj);
+        void Save(Product obj);
     }
 }

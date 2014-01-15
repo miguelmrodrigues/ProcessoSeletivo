@@ -90,6 +90,7 @@
     <Content Include="Global.asax" />
     <Content Include="Models\Domain\Mapping\Category.hbm.xml" />
     <Content Include="Models\Domain\Mapping\Product.hbm.xml" />
+    <Content Include="Models\Nhibernate\hibernate.cfg.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +100,9 @@
     </Compile>
     <Compile Include="Models\Domain\Entities\Category.cs" />
     <Compile Include="Models\Domain\Entities\Product.cs" />
+    <Compile Include="Models\Domain\Repositories\ICategoryRepository.cs" />
+    <Compile Include="Models\Domain\Repositories\IProductRepository.cs" />
+    <Compile Include="Models\Nhibernate\NHibernateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
