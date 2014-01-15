@@ -1,0 +1,16 @@
+﻿@using ProcessoSeletivo.Models.Domain.Entities;
+
+@model IList<Category>
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+    @foreach (Category category in Model) 
+    {
+        <li>             
+            @Html.ActionLink(category.Name, "View", new { id=category.id })
+            @Html.Partial("Categories", category.ChildCategories)
+        </li>
+    }
+    </ul>
+}

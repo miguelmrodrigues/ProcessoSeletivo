@@ -1,0 +1,36 @@
+﻿@using ProcessoSeletivo.Models.Domain.Entities;
+
+@{  
+    ViewBag.Title = "Index";
+}
+
+<h3>Catálogo</h3>
+<hr />
+<div class="container" id="main-container">
+    <div class="row">
+        <div class="col-lg-2 col-category">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Categorias</h3>
+                </div>
+                <div class="panel-body categories-box">
+                     @Html.Partial("Categories", ViewData["Categories"] as IList<Category>)                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+            @foreach (Product product in ViewData["Products"] as IList<Product>)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body text-center">
+                            <strong>@product.Name</strong>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+        </div>
+    </div>
+</div>

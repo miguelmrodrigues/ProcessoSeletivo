@@ -1,0 +1,16 @@
+﻿@using ProcessoSeletivo.Models.Domain.Entities;
+
+@model IList<Category>
+
+@if (Model != null && Model.Count > 0)
+{
+    foreach (Category category in Model) 
+    {
+        if(category.ParentCategory == null){            
+            <option value="@category.id">@category.Name</option>
+        }else{
+            <option value="@category.id">- @category.Name</option>
+        }        
+        @Html.Partial("CategoriesOption", category.ChildCategories)   
+    }
+}
