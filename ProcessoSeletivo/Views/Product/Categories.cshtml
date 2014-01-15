@@ -1,0 +1,16 @@
+﻿@using ProcessoSeletivo.Models.Domain.Entities;
+
+@model IEnumerable<Category>
+
+@if (Model.Count() > 0)
+{
+    <ul>
+    @foreach (Category category in Model) 
+    {
+        <li>
+            <input type="checkbox" name="categories" value="@category.id"> @category.Name            
+            @Html.Partial("Categories", category.ChildCategories)
+        </li>
+    }
+    </ul>
+}

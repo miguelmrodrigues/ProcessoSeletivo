@@ -9,6 +9,8 @@ namespace ProcessoSeletivo.Models.Domain.Repositories
 
         IList<Category> FindAll();
 
+        IList<Category> FindAllByIds(int[] ids);
+        
         IList<Category> FindAllSubcategories(int id);
 
         void Save(Category obj);

@@ -40,6 +40,18 @@ namespace ProcessoSeletivo.Models.Domain.Repositories
             }            
         }
 
+        public IList<Category> FindAllByIds(int[] ids)
+        {
+            try
+            {
+                return _session.Query<Category>().Where(c => ids.Contains(c.id)).ToList();
+            }
+            catch (Exception ex)
+            {                
+                throw new Exception(ex.Message);
+            }
+        }
+
         public IList<Category> FindAllSubcategories(int id)
         {
             try
@@ -68,5 +80,6 @@ namespace ProcessoSeletivo.Models.Domain.Repositories
                 }
             }
         }
+        
     }
 }
