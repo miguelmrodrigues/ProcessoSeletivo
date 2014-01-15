@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ProcessoSeletivo"
+                   namespace="ProcessoSeletivo.Models.Domain.Entities">
+
+    <class name="Category" table="Category">
+      <id name="id" access="property" column="id" type="Int32">
+        <generator class="native"></generator>
+      </id>
+      <property name="Name" not-null="true" access="property" type="String">
+        <column name="Name" length="50" />
+      </property>
+      <many-to-one name="ParentCategory" column="Category_id" class="Category" not-null="false" />
+      <bag name="ChildCategories" cascade="save-update" lazy="true" >
+        <key column="Category_id" />
+        <one-to-many class="Category" />
+      </bag>
+      <bag name="Products" table="Category_Product" cascade="save-update">
+        <key column="Category_id" />
+        <many-to-many class="Product" column="Product_id" not-found="ignore" />
+      </bag>
+    </class>
+
+</hibernate-mapping>

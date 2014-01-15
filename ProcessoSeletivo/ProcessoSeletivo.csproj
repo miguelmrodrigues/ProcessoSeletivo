@@ -88,6 +88,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Models\Domain\Mapping\Category.hbm.xml" />
+    <Content Include="Models\Domain\Mapping\Product.hbm.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
