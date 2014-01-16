@@ -87,6 +87,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Catalogo.mdf" />
+    <Content Include="App_Data\Catalogo_log.ldf">
+      <DependentUpon>Catalogo.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\create_base.sql" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />

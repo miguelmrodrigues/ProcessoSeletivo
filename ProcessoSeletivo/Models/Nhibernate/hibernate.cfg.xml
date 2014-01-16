@@ -8,7 +8,7 @@
       NHibernate.Driver.SqlClientDriver
     </property>
     <property name="connection.connection_string">
-      Server=MIGUEL-PC\SQLEXPRESS; Database=Catalogo; Trusted_Connection=True;
+      Data Source=(LocalDB)\v11.0;AttachDbFilename="C:\Users\Miguel\Documents\Visual Studio 2012\Projects\ProcessoSeletivo\ProcessoSeletivo\App_Data\Catalogo.mdf";Integrated Security=True
     </property>
     <property name="dialect">
       NHibernate.Dialect.MsSql2008Dialect

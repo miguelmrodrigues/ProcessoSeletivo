@@ -62,19 +62,19 @@ namespace ProcessoSeletivo.Controllers
             }
         }
 
-        public List<Product> GetChildProducts(Category _category)
+        public List<Product> GetChildProducts(Category _Category)
         {
-            List<Product> products = _category.Products == null ? new List<Product>() : _category.Products.ToList();
+            List<Product> products = _Category.Products == null ? new List<Product>() : _Category.Products.ToList();
 
-            if (_category.ChildCategories != null)
+            if (_Category.ChildCategories != null)
             {
-                foreach (Category item in _category.ChildCategories)
+                foreach (Category item in _Category.ChildCategories)
                 {
                     List<Product> subproducts = this.GetChildProducts(item);
                     products.AddRange(subproducts);
                 }
             }
-            return products;
+            return products.Distinct().ToList();
         }
 	}
 }
